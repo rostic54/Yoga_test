@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'FreestyleScript-Regular';
+  src: url('FreestyleScript-Regular.eot');
+  src: url('FreestyleScript-Regular.woff2') format('woff2'),
+       url('FreestyleScript-Regular.woff') format('woff'),
+       url('FreestyleScript-Regular.ttf') format('truetype'),
+       url('FreestyleScript-Regular.svg#FreestyleScript-Regular') format('svg'),
+       url('FreestyleScript-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

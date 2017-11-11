@@ -1,0 +1,103 @@
+@import 'sprite.scss',
+        'normalize&reset.scss',
+        'fonts.scss',
+        'variables.scss',
+        'mixins&includes.scss',
+        'typography.scss',
+        'forms.scss',
+        'layout.scss';
+      
+
+//---------------------------------///
+//          MAIN                   ///
+//_________________________________/// 
+
+
+.titles{
+	text-align: center;
+	padding-bottom: 65px;
+	&__print{
+		padding-bottom: 40px;
+	}
+	&__script{
+		color: $titleGray;
+	}
+}
+
+.programs{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	@include b( mobile ){
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__item{
+		width: 50%;
+		display: flex;
+		-ms-align-items: center;
+		align-items: center;
+		padding-bottom: 20px;
+		&:nth-child(even){
+			padding-left: 15px;
+			@include b( laptop ){
+				padding-left: 0;
+			}
+		}
+		@include b( tablet ){
+			flex-direction: column;
+			width: 47%;
+		} 
+		@include b( mobile ){
+			
+			width: 85%;
+		}
+		
+		&--img{
+			
+			@include b( tablet ){
+				width: 100%;
+				border-radius: 10px;
+			}
+		} 
+		&--descript{
+			padding: 0 28px 0 30px;
+			
+			@include b( tablet ){
+				padding: 20px 0;
+			}
+		}
+		&--title{
+			padding-bottom: 27px;
+			@include b( laptop ){
+				text-align: center;
+				font-size: 17px;
+			}
+		}
+		&--name{
+			color: $titleGray;
+		}
+		
+	}
+}
+
+.improv{
+	background-color: $purple;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	&__item{
+		width: 25%;
+		text-align: center;
+		padding-bottom: 20px;
+		&--icon{
+			display: inline-block;
+			padding-bottom: 20px;
+			}
+		&--title{
+			padding-bottom: 15px;
+		}
+	}
+}
+

@@ -33,7 +33,7 @@ h2 {
 h3 {
   color: $purple;
   font-size: 30px;
-  line-height: 24px;
+  line-height: 34px;
   font-weight: 700;
 }
 
@@ -45,8 +45,11 @@ h4 {
 
 h5 { // improvment title 
   font-size: 18px;
+  @include b( mobile ){
+    font-size: 16px;
+  }
   line-height: 28px;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 h6 {
@@ -58,6 +61,9 @@ p {
   padding: 0 0 $mainFontHeight;
   line-height: 25px;
   margin: 0;
+}
+.white{
+  color: #ffffff;
 }
 
 hr {

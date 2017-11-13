@@ -1,0 +1,169 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$envelop-name: 'envelop';
+$envelop-x: 20px;
+$envelop-y: 52px;
+$envelop-offset-x: -20px;
+$envelop-offset-y: -52px;
+$envelop-width: 21px;
+$envelop-height: 13px;
+$envelop-total-width: 93px;
+$envelop-total-height: 73px;
+$envelop-image: '../img/sprite.png';
+$envelop: (20px, 52px, -20px, -52px, 21px, 13px, 93px, 73px, '../img/sprite.png', 'envelop', );
+$face-name: 'face';
+$face-x: 80px;
+$face-y: 0px;
+$face-offset-x: -80px;
+$face-offset-y: 0px;
+$face-width: 13px;
+$face-height: 21px;
+$face-total-width: 93px;
+$face-total-height: 73px;
+$face-image: '../img/sprite.png';
+$face: (80px, 0px, -80px, 0px, 13px, 21px, 93px, 73px, '../img/sprite.png', 'face', );
+$googl-name: 'googl';
+$googl-x: 56px;
+$googl-y: 0px;
+$googl-offset-x: -56px;
+$googl-offset-y: 0px;
+$googl-width: 19px;
+$googl-height: 21px;
+$googl-total-width: 93px;
+$googl-total-height: 73px;
+$googl-image: '../img/sprite.png';
+$googl: (56px, 0px, -56px, 0px, 19px, 21px, 93px, 73px, '../img/sprite.png', 'googl', );
+$instag-name: 'instag';
+$instag-x: 30px;
+$instag-y: 0px;
+$instag-offset-x: -30px;
+$instag-offset-y: 0px;
+$instag-width: 21px;
+$instag-height: 21px;
+$instag-total-width: 93px;
+$instag-total-height: 73px;
+$instag-image: '../img/sprite.png';
+$instag: (30px, 0px, -30px, 0px, 21px, 21px, 93px, 73px, '../img/sprite.png', 'instag', );
+$phone-name: 'phone';
+$phone-x: 0px;
+$phone-y: 26px;
+$phone-offset-x: 0px;
+$phone-offset-y: -26px;
+$phone-width: 21px;
+$phone-height: 21px;
+$phone-total-width: 93px;
+$phone-total-height: 73px;
+$phone-image: '../img/sprite.png';
+$phone: (0px, 26px, 0px, -26px, 21px, 21px, 93px, 73px, '../img/sprite.png', 'phone', );
+$pint-name: 'pint';
+$pint-x: 56px;
+$pint-y: 26px;
+$pint-offset-x: -56px;
+$pint-offset-y: -26px;
+$pint-width: 17px;
+$pint-height: 21px;
+$pint-total-width: 93px;
+$pint-total-height: 73px;
+$pint-image: '../img/sprite.png';
+$pint: (56px, 26px, -56px, -26px, 17px, 21px, 93px, 73px, '../img/sprite.png', 'pint', );
+$place-name: 'place';
+$place-x: 0px;
+$place-y: 52px;
+$place-offset-x: 0px;
+$place-offset-y: -52px;
+$place-width: 15px;
+$place-height: 21px;
+$place-total-width: 93px;
+$place-total-height: 73px;
+$place-image: '../img/sprite.png';
+$place: (0px, 52px, 0px, -52px, 15px, 21px, 93px, 73px, '../img/sprite.png', 'place', );
+$planet-name: 'planet';
+$planet-x: 26px;
+$planet-y: 26px;
+$planet-offset-x: -26px;
+$planet-offset-y: -26px;
+$planet-width: 21px;
+$planet-height: 21px;
+$planet-total-width: 93px;
+$planet-total-height: 73px;
+$planet-image: '../img/sprite.png';
+$planet: (26px, 26px, -26px, -26px, 21px, 21px, 93px, 73px, '../img/sprite.png', 'planet', );
+$twitt-name: 'twitt';
+$twitt-x: 0px;
+$twitt-y: 0px;
+$twitt-offset-x: 0px;
+$twitt-offset-y: 0px;
+$twitt-width: 25px;
+$twitt-height: 21px;
+$twitt-total-width: 93px;
+$twitt-total-height: 73px;
+$twitt-image: '../img/sprite.png';
+$twitt: (0px, 0px, 0px, 0px, 25px, 21px, 93px, 73px, '../img/sprite.png', 'twitt', );
+$spritesheet-width: 93px;
+$spritesheet-height: 73px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($envelop, $face, $googl, $instag, $phone, $pint, $place, $planet, $twitt, );
+$spritesheet: (93px, 73px, '../img/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

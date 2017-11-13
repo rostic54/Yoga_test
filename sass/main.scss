@@ -83,21 +83,262 @@
 }
 
 .improv{
-	background-color: $purple;
+	position: relative;
+	background-image: url(../img/botBc.jpg);
+	background-size: cover;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	@include b( mobile ){
+			padding: 0 5px;
+
+		}
+	&:before{
+		content: '';
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: rgba( 91, 108, 235, .8);
+		
+	}
 	&__item{
+		position: relative;
 		width: 25%;
 		text-align: center;
 		padding-bottom: 20px;
+		@include b( phablet ){
+			width: 50%;
+		}
+		@include b( mobile ){
+			padding: 0 5px;
+		}
+		img {
+			@include b( mobile ){
+			  width: 60px;
+		    }
+		}
 		&--icon{
 			display: inline-block;
 			padding-bottom: 20px;
 			}
 		&--title{
 			padding-bottom: 15px;
+			color: #ffffff;
 		}
 	}
+}
+
+.grid{
+	@include b( mobile ){
+			margin: 0 auto;
+			width: 90%	;
+		}
+	&__item{
+		width: 25%;
+		/* @include b( tablet ){
+			width: 33%;
+		} */
+		@include b( phablet ){
+			width: 50%;
+		}
+		@include b( mobile ){
+			margin: 0 auto;
+			width: 100%	;
+		}
+		img{
+			vertical-align: top;
+			width: 100%;
+		}
+	}
+}
+
+.packages{
+	display: flex;
+	justify-content: center;
+	@include b( phablet ){
+            		flex-direction: column;
+            		align-items: center;
+
+            	}
+
+	&__piec{
+		text-align: center;
+		border: 1px solid $grayLight;
+        border-radius: 10px;
+        width: 370px;
+        margin: 10px;
+        @include b( mobile ){
+            		width: 270px;
+            	}
+
+        
+        &--price{
+        	font-weight: 700;
+        	padding: 45px 0 40px 40px;
+        	border-bottom: 1px solid $grayLight;
+        	&--numb{
+        		font-size: 67px;
+            	position: relative;
+            	@include b( tablet ){
+            		font-size: 50px;
+            	}
+        		&:after{
+        			content: '$';
+        			position: absolute;
+        			display: block;
+        			left: -20px;
+                    top: 40%;
+        			font-size: 30px;
+        			@include b( tablet ){
+            		font-size: 20px;
+            	}
+        		}
+        	}
+
+        }
+        &--conditions{
+        		padding: 30px;
+        		&--list{
+        		    padding-bottom: 25px;       			
+        		}
+        		&--item{
+        			position: relative;
+        			padding: 17px 0;
+        			&:after{
+        				content:'';
+        				position: absolute;
+        				display: inline-block;
+        				border-bottom: 1px solid $grayLight; 
+        				width: 70px;
+        				bottom: 0;
+        				left: 50%;
+        				margin-left: -35px; 
+        			}
+        			&:last-child:after{
+        				display: none;
+        			}
+        		}
+        		&--wrapper{
+        			border: 1px solid $grayLight;
+        			border-radius: 20px; 
+        			margin: 0 auto;
+        			width: 140px;
+        		}
+        }
+
+	}
+}
+
+.form-wrapper{
+	width: 260px;
+	margin: 0 auto;
+	padding: 30px 31px;
+	border-radius: 20px;
+	background-color: $grayLight; 
+	    &__title{
+	    	font-size: 21px;
+	    	padding-bottom: 20px;
+	    }
+	   
+
+}
+
+.form{
+	padding-bottom: 15px;
+	text-align: right;
+	&__applic{
+		border-radius: 10px;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+	}
+	&__select-wrapper{
+		position: relative;	 
+		&:after{
+			content:'▼';
+			position: absolute;
+			color: #a5a5a5;
+			top: 25%;
+			right: 20px;
+		}
+	}
+	 &__button{
+	    	
+	  	display: inline-block;
+		width: 150px;
+
+	}
+
+}
+
+.reviews{
+	
+	&__item{
+		border: 1px solid $grayLight;
+	}
+	&__foto{
+		position: relative;
+		display: inline-block;
+		padding: 30px 0;
+		&:after{
+			content: '';
+			position: absolute;
+			display: inline-block;
+			border-right: 2px solid $grayLight;
+			height: 60px;
+			top: 30%;
+			right: -25px;
+		}
+		&--wrap{
+			display: inline-block;
+			width: 120px;
+			img{
+				width: 100%;
+			}
+		}
+
+	}
+	&__txt{
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px 50px;
+		width: 700px;
+		&:before{
+			content:'\"';
+			display: inline-block;
+			transform: rotate(185deg);
+			position: absolute;
+			color: $purple;
+			left: 10px;
+			top: -5px;
+			font-size: 60px;
+		}
+		&:after{
+			content:'\"';
+			display: inline-block;
+			transform: rotate(5deg);
+			position: absolute;
+			color: $purple;
+			right: 30px;
+			bottom: 90px;
+			font-size: 60px;
+		}
+		&--italic{
+			font-style: italic;
+		}
+		&--trainer{
+			font-style: normal;
+			font-size: 18px;
+			font-weight: 700;
+			color: $purple;
+		}
+	}
+}
+
+.slick-list{
+	width: 900px;
+	border: 1px solid $grayLight;
+	padding: 15px;
 }
 

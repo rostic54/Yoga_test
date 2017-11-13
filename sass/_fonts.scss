@@ -13,4 +13,16 @@
        url('../fonts/FreeStSc/FreestyleScript-Regular.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
+};
+
+@font-face{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/fontsSlick/slick.eot');
+    src: url('../fonts/fontsSlick/slick.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/fontsSlick/slick.woff') format('woff'),
+     url('../fonts/fontsSlick/slick.ttf') format('truetype'), 
+     url('../fonts/fontsSlick/slick.svg#slick') format('svg');
 }

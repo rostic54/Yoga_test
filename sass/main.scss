@@ -271,8 +271,11 @@
 
 }
 
-.reviews{
-	
+.reviews{	
+	padding: 0 60px;
+	@include b(tablet){
+		padding: 0;
+	}
 	&__item{
 		border: 1px solid $grayLight;
 	}
@@ -280,6 +283,11 @@
 		position: relative;
 		display: inline-block;
 		padding: 30px 0;
+		@include b(phablet){
+			display: block;
+			text-align: center;
+			padding: 10px 0;
+		}
 		&:after{
 			content: '';
 			position: absolute;
@@ -288,12 +296,18 @@
 			height: 60px;
 			top: 30%;
 			right: -25px;
+			@include b(phablet){
+				display: none;
+			}
 		}
 		&--wrap{
 			display: inline-block;
 			width: 120px;
 			img{
 				width: 100%;
+			}
+			@include b(phablet){
+				width: 80px;
 			}
 		}
 
@@ -304,6 +318,13 @@
 		vertical-align: top;
 		padding: 10px 50px;
 		width: 700px;
+		@include b( tablet ){
+			width: 500px;
+		}
+		@include b( phablet ){
+			width: 100%;
+			padding: 10px 30px 0 ;
+		}
 		&:before{
 			content:'\"';
 			display: inline-block;
@@ -313,6 +334,9 @@
 			left: 10px;
 			top: -5px;
 			font-size: 60px;
+			@include b(phablet){
+				font-size: 40px;
+			}
 		}
 		&:after{
 			content:'\"';
@@ -323,22 +347,69 @@
 			right: 30px;
 			bottom: 90px;
 			font-size: 60px;
+			@include b(phablet){
+				font-size: 40px;
+				right: 45px;
+				bottom: 70px;
+			}
 		}
 		&--italic{
 			font-style: italic;
 		}
 		&--trainer{
 			font-style: normal;
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: 700;
 			color: $purple;
 		}
 	}
+	
+}
+.slick-list{
+	
+	border: 1px solid $grayLight;
+	
+	padding: 15px;
+	@include b( tablet ){
+		
+		
+	}
+
+}
+.dots-coment{
+	position: absolute;
+	display: inline-block;
+	right: 10px;
+	top: 20%;
+	@include b(tablet){
+		right: 5px;
+	}
+	@include b(phablet){
+		right: 0px;
+		top: 30%;
+	}
+	li{
+		margin-bottom: 8px; 
+		button{
+			border: 3px solid $grayLight;
+			box-shadow: inset 0 0 0 3px  white;
+			background-color: white;
+			border-radius: 50%;
+		    width: 25px;
+			height: 25px;
+			font-size: 0;
+			padding: 0;
+			&:focus{
+				background-color: $purple;
+				border-color: $purple;
+				top: 0;
+			}
+
+		}
+	}
+
+	
 }
 
-.slick-list{
-	width: 900px;
-	border: 1px solid $grayLight;
-	padding: 15px;
-}
+
 

@@ -10,7 +10,10 @@ function mason(){
 function slider(){
     $('.reviews').slick({
         vertical: true,
-        dots: true
+        dots: true,
+        dotsClass: 'dots-coment',
+        prevArrow: false,
+        nextArrow: false
     });
 };
 

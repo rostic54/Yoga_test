@@ -36,12 +36,20 @@
 	display: flex;
 	justify-content: center;
 	padding: 80px 0	;
+	@include b( phablet){
+		flex-direction: column-reverse;
+		align-items: center;
+	}
 	&__form{
 		position: relative;
 		z-index: 1;
 		text-align: right;
 		padding: 0 30px;
 		width: 50%;
+		@include b( phablet ){
+           width: 90%;
+           padding: 20px 0;
+         }
 	}
 	&__title{
 		position: relative;
@@ -224,9 +232,10 @@
 
 }
 
+
 .information{
 	display: flex;
-	margin: 100px 0;
+	//margin: 100px 0;
 	padding: 0 20px;
 	@include b( tablet ){
 		flex-direction: column;
@@ -240,6 +249,10 @@
 			padding: 0 0 50px;
 		}
 	}
+}
+
+.wrapper-about{
+	padding: 100px 0;
 }
 
 .mid-slide{

@@ -47,10 +47,67 @@ $footerHeight: 242px;
     height: 80px; 
     display: -ms-flexbox;
     display: flex;
+    &__button-wrapper{
+    	display: none;
+    	@include b( phablet ){
+    		display: inline-block;
+    		position: relative;
+    		margin-top: 30px;
+            float: right;
+    	}
+    }
+    &__button{
+    display: inline-block;
+    line-height: 0;
+    width: 30px;
+    height: 5px;
+    background-color: $purple;
+    &:before,
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      background-color: $purple;
+      width: 30px;
+      height: 5px;
+      right: 0;
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.2s, 0s;
+    }
+    &:before{
+      top: 0px;
+      transition-property: top, transform;
+    }
+    &:after{
+      bottom: 1px;
+      transition-property: bottom, transform;
+    }
+    &--active{
+      background: none;
+      &:before{
+        top: 10px;
+        transform: rotate(45deg);
+        transition-delay: 0s, 0.3s;
+      }
+      &:after{
+        bottom: 10px;
+        transform: rotate(-45deg);
+        transition-delay: 0s, 0.3s;
+      }
+    }
+  }
+  &__link-button{
+    padding-bottom: 6px;
+    padding-top: 0;
+    display: inline-block;
+  }
 }
 .menu{
 	display: flex;
 	justify-content: space-between;
+	@include b(phablet){
+		display: none;
+	}
 	&__logo{
 		text-align: center;
 		}
@@ -78,6 +135,57 @@ $footerHeight: 242px;
 		}
 
 	}
+}
+
+.burger-menu{
+  display: none;
+  opacity: 0;
+  transition: opacity .15s ease, background-color .1s ease-in;
+  @include b(tablet){
+    width: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    top: 60px;
+  }
+
+  &__item{
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    &:focus{
+
+    }
+  }
+  &__link{
+    font-family: 'Roboto-Regular';
+    list-style: none;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 600;
+    padding-bottom: 2px;
+    border: 1px solid transparent;
+    &:hover{
+      border-bottom: 1px solid white;
+      transition: all .3s ease-in-out;
+    }
+
+  }
+  &__logo-wrapper{
+    text-align: center;
+    padding: 20px 0;
+    &--link{
+      display: inline-block;
+    }
+  }
+  &__link-logo{
+    display: inline-block;
+
+  }
+  &__img{
+    display: block;
+    padding-left: 16%;
+  }
+
 }
 
 

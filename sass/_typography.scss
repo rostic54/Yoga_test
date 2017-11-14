@@ -21,7 +21,13 @@ h1 {
   font-size: 48px;
   line-height: 60px;
   font-weight: 700;
-  padding-bottom: 30px
+  padding-bottom: 30px;
+  @include b( phablet ){
+    font-size: 35px;
+  }
+  @include b( mobile ){
+    font-size: 25px;
+  }
 }
 
 h2 {
@@ -29,6 +35,9 @@ h2 {
   font-size: 41px;
   line-height: 44px;
   font-weight: 400;
+  @include b( phablet ){
+    font-size: 32px;
+  }
 }
 
 h3 {
@@ -123,9 +132,7 @@ a:visited {
     }
   }
 }
-img{
-  width: 100%;
-}
+
 img[style*="float: left"],
 img[style*="float:left"],
 img[align="left"] {

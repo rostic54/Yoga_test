@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/check.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
 </head>
@@ -26,19 +27,40 @@
     <!-- HEADER -->
     <header class="header">
     <div class="container">
-    <nav class="menu">
+    <nav id="menu" class="menu">
         <ul class="menu__list menu__list--left">
-            <li class="menu__item"><a href="#About" class="menu__item--link">About us</a></li>
-            <li class="menu__item"><a href="#Reservation" class="menu__item--link">Reservation</a></li>
-            <li class="menu__item"><a href="#Gallery" class="menu__item--link">Gallery</a></li>
+            <li class="menu__item"><a href="#about" class="menu__item--link">About us</a></li>
+            <li class="menu__item"><a href="#first" class="menu__item--link">Reservation</a></li>
+            <li class="menu__item"><a href="#gallery" class="menu__item--link">Gallery</a></li>
         </ul>
         <div class="menu__logo"><img src="img/Logo.png" alt="logo"></div>
         <ul class="menu__list menu__list--right">
             <li class="menu__item"><a href="#blog" class="menu__item--link">Blog</a></li>
-            <li class="menu__item"><a href="#Elements" class="menu__item--link">Elements</a></li>
-            <li class="menu__item"><a href="#Shop" class="menu__item--link">Shop</a></li>
+            <li class="menu__item"><a href="#elements" class="menu__item--link">Elements</a></li>
+            <li class="menu__item"><a href="#shop" class="menu__item--link">Shop</a></li>
         </ul>
     </nav>
+       <div class="header__button-wrapper">
+                <a id="burgerButton" href="#" class="header__link-button">
+                    <span class="header__button"></span>
+                </a>
+        </div>
+    <div id="burgerMenu" class="burger-menu">
+            <div class="container">
+                <div class="burger-menu__logo-wrapper">
+                    <a href="#hidden" class="modals burger-menu__link-logo">
+                        <img class="burger-menu__img" src="img/logo.png" alt="potok-klientov"></a>
+                </div>
+                <ul class="burger-menu__list">
+                    <li class="burger-menu__item"><a href="#" class="burger-menu__link">About us</a></li>
+                    <li class="burger-menu__item"><a href="#case" class="burger-menu__link">Reservation</a></li>
+                    <li class="burger-menu__item"><a href="#result" class="burger-menu__link">Gallery</a></li>
+                    <li class="burger-menu__item"><a href="#secrets" class="burger-menu__link">Blog</a></li>
+                    <li class="burger-menu__item"><a href="#workPlan" class="burger-menu__link">Elements</a></li>
+                    <li class="burger-menu__item"><a href="#team" class="burger-menu__link">Shop</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
    
     </header><!-- HEADER [END] -->

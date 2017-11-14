@@ -13,15 +13,98 @@
 //_________________________________/// 
 
 
+.content{
+	padding-top: 80px;
+}
+
+.first{
+	position: relative;
+	background-image: url(../img/topBc.jpg );
+	background-size: cover;
+   &:after{
+	content:'';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: block;
+	top: 0;
+	background-color: rgba( 91, 108, 235, .8);
+   }
+} 
+
+.top{
+	display: flex;
+	justify-content: center;
+	padding: 80px 0	;
+	&__form{
+		position: relative;
+		z-index: 1;
+		text-align: right;
+		padding: 0 30px;
+		width: 50%;
+	}
+	&__title{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.form-wrapper{
+	width: 260px;
+	z-index: 1;
+	position: relative;
+	display: inline-block;
+	padding: 30px 31px;
+	border-radius: 20px;
+	background-color: #fff; 
+	    &__title{
+	    	text-align: left;
+	    	font-size: 21px;
+	    	padding-bottom: 20px;
+	    }
+
+}
+
+.form{
+	padding-bottom: 15px;
+	text-align: right;
+	&__applic{
+		border-radius: 10px;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+	}
+	&__select-wrapper{
+		position: relative;	 
+		&:after{
+			content:'▼';
+			position: absolute;
+			color: #a5a5a5;
+			top: 25%;
+			right: 20px;
+		}
+	}
+	 &__button{
+	    	
+	  	display: inline-block;
+		width: 150px;
+
+	}
+
+}
+
 .titles{
 	text-align: center;
 	padding-bottom: 65px;
 	&__print{
-		padding-bottom: 40px;
+		padding-bottom: 15px;
 	}
 	&__script{
 		color: $titleGray;
 	}
+}
+
+.program-list{
+	padding: 100px 0;
 }
 
 .programs{
@@ -82,10 +165,136 @@
 	}
 }
 
-.improv{
+.grid{
+	@include b( mobile ){
+			margin: 0 auto;
+			width: 90%	;
+		}
+	&__item{
+		width: 25%;
+		position: relative;
+		@include b( phablet ){
+			width: 50%;
+		}
+		@include b( mobile ){
+			margin: 0 auto;
+			width: 100%	;
+		}
+		img{
+			vertical-align: top;
+			width: 100%;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			cursor: pointer;
+			display: none;
+			top: 0;
+			//display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba( 91, 108, 235, .8);
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -20px;
+			margin-left: -20px;
+			cursor: pointer;
+			z-index: 2;
+			width: 40px;
+			height: 40px;
+			display: none;
+			background-image: url(../img/magnif.png);
+			background-size: cover;
+		}
+		&:hover:after,
+		&:hover:before{
+			display: block;
+
+		}
+
+	}
+	&__link{
+			display: block;
+			
+		}
+
+}
+
+.information{
+	display: flex;
+	margin: 100px 0;
+	padding: 0 20px;
+	@include b( tablet ){
+		flex-direction: column;
+		margin: 60px 0;
+		align-items: center;
+	}
+	&__about{
+		padding-right: 100px;
+
+		@include b( tablet ){
+			padding: 0 0 50px;
+		}
+	}
+}
+
+.mid-slide{
+	width: 560px;
+	height: 295px;
+	@include b(phablet){
+		width: 300px;
+		height: auto;
+	}
+	&__btn{
+		position: absolute;
+		z-index: 2;
+        width: 40px;
+        height: 40px;
+        font-size: 26px;
+        font-weight: 700;
+        border: 1px solid $grayLight;
+        padding: 9px;
+        margin-bottom: -10px;
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        @include b( phablet ){
+        	display: none;
+        }
+	}
+	&__next{
+		bottom: 50%;
+        right: -19px;
+	}
+	&__prev{
+		bottom: 50%;
+		left: -19px;
+	}
+}
+
+.second-background{
 	position: relative;
-	background-image: url(../img/botBc.jpg);
+	background-image: url(../img/botBc1.jpg);
 	background-size: cover;
+	padding: 80px 0;
+	&:before{
+		content: '';
+		position: absolute;
+		display: block;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba( 91, 108, 235, .8);
+		
+	}
+}
+
+.improv{
+	
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -93,15 +302,7 @@
 			padding: 0 5px;
 
 		}
-	&:before{
-		content: '';
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-		background-color: rgba( 91, 108, 235, .8);
-		
-	}
+	
 	&__item{
 		position: relative;
 		width: 25%;
@@ -129,28 +330,8 @@
 	}
 }
 
-.grid{
-	@include b( mobile ){
-			margin: 0 auto;
-			width: 90%	;
-		}
-	&__item{
-		width: 25%;
-		/* @include b( tablet ){
-			width: 33%;
-		} */
-		@include b( phablet ){
-			width: 50%;
-		}
-		@include b( mobile ){
-			margin: 0 auto;
-			width: 100%	;
-		}
-		img{
-			vertical-align: top;
-			width: 100%;
-		}
-	}
+.offers{
+	padding: 70px 0;
 }
 
 .packages{
@@ -230,49 +411,13 @@
 	}
 }
 
-.form-wrapper{
-	width: 260px;
-	margin: 0 auto;
-	padding: 30px 31px;
-	border-radius: 20px;
-	background-color: $grayLight; 
-	    &__title{
-	    	font-size: 21px;
-	    	padding-bottom: 20px;
-	    }
-	   
-
-}
-
-.form{
-	padding-bottom: 15px;
-	text-align: right;
-	&__applic{
-		border-radius: 10px;
-		margin-bottom: 20px;
-		padding-bottom: 10px;
-	}
-	&__select-wrapper{
-		position: relative;	 
-		&:after{
-			content:'▼';
-			position: absolute;
-			color: #a5a5a5;
-			top: 25%;
-			right: 20px;
-		}
-	}
-	 &__button{
-	    	
-	  	display: inline-block;
-		width: 150px;
-
-	}
-
+.reviews-wrapper{
+	position: relative;
 }
 
 .reviews{	
-	padding: 0 60px;
+	position: relative;
+	padding: 40px 60px;
 	@include b(tablet){
 		padding: 0;
 	}
@@ -365,6 +510,33 @@
 	}
 	
 }
+
+.teacher{
+	position: absolute;
+	display: inline-block;
+	width: 200px;
+	border: 1px solid $grayLight;
+	bottom: 10px;
+	&__item{
+		&--part{
+			display: inline-block;
+		}
+		&--foto{
+		    background-image: url(../img/cicrleLittl.png);
+		    background-position: center -5px;
+	      	width: 60px;
+		    height:60px;
+		    border: 1px solid $grayLight;
+		    border-radius: 40px;
+	   }
+	   &--name{
+	   	&--gray{
+	   		color: gray;
+	   	}
+	   }
+	}
+	
+}
 .slick-list{
 	
 	border: 1px solid $grayLight;
@@ -376,6 +548,8 @@
 	}
 
 }
+
+
 .dots-coment{
 	position: absolute;
 	display: inline-block;
@@ -408,8 +582,8 @@
 		}
 	}
 
-	
 }
+
 
 
 

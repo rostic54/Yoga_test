@@ -13,12 +13,15 @@ function sliderComments(){
         dots: true,
         dotsClass: 'dots-coment',
         prevArrow: false,
-        nextArrow: false
+        nextArrow: false,
+        asNavFor: '.teacher'
     });
 };
 
 function sliderLittle(){
     $('.teacher').slick({
+        asNavFor: '.reviews',
+        autoplay: false,
         prevArrow: '<a href="" class="mid-slide__prev mid-slide__btn"><</a>',
         nextArrow: '<a href="" class="mid-slide__next mid-slide__btn">></a>'
     
@@ -29,9 +32,6 @@ function sliderMiddle(){
     $( '.mid-slide' ).slick({
         prevArrow: '<a href="" class="mid-slide__prev mid-slide__btn"><</a>',
         nextArrow: '<a href="" class="mid-slide__next mid-slide__btn">></a>'
-    
-        /* nextArrow:'<img src="../img/next.png">',
-         prevArrow:'<img src="../img/prev.png">'*/
     });
 
 }
@@ -64,6 +64,51 @@ function pushBurger(){
 
 }
 
+function popUp(){
+    $( '.js-btn' ).magnificPopup({
+        type: 'inline',
+        //focus: '#name'
+
+    });
+}
+
+function popUpGallary(){
+    $( '#art' ).magnificPopup({
+        delegate: 'a',
+        type: 'image'
+    });
+} 
+
+
+
+function hoverHeadPackage(){
+    var packages = document.querySelectorAll( '.packages__piec' );
+
+    for( var i = 0; i < packages.length ; i++ ){
+       packages[ i ].onmouseover = function( event ){
+
+   
+        var targetObj = event.target;
+        if( targetObj.tagName ==='A' ){
+
+        var priceBlock = this.querySelector( '.js-purpleHover' );        
+        priceBlock.style.backgroundColor = '#5764e5';
+    
+        }
+      } 
+       packages[ i ].onmouseout = function( event ){
+
+        var targetObj = event.target;
+        if( targetObj.tagName ==='A' ){
+
+        var priceBlock = this.querySelector( '.js-purpleHover' );        
+        priceBlock.style.backgroundColor = '';
+           
+        }
+      }                  
+    }
+   
+};
 
 $( document ).ready( function(){
     mason();
@@ -72,4 +117,7 @@ $( document ).ready( function(){
     sliderLittle();
     pushBurger();
     scroll();
+    popUp();
+    popUpGallary();
+    hoverHeadPackage();
 });

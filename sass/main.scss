@@ -17,10 +17,23 @@
 	padding-top: 80px;
 }
 
+.purple-bc{
+	background-color: $purple; 
+}
+
 .first{
 	position: relative;
 	background-image: url(../img/topBc.jpg );
 	background-size: cover;
+	@include b( tablet ){
+		background-position: center;
+	}
+	@include b( phablet ){
+		background-position-x: -1050px;
+	}
+	 @include b( mobile ){
+		background-position-x: -1250px;
+	} 
    &:after{
 	content:'';
 	position: absolute;
@@ -39,6 +52,7 @@
 	@include b( phablet){
 		flex-direction: column-reverse;
 		align-items: center;
+		padding: 40px 0;		
 	}
 	&__form{
 		position: relative;
@@ -49,6 +63,7 @@
 		@include b( phablet ){
            width: 90%;
            padding: 20px 0;
+           text-align: center;
          }
 	}
 	&__title{
@@ -65,6 +80,10 @@
 	padding: 30px 31px;
 	border-radius: 20px;
 	background-color: #fff; 
+	&--hidden{
+		margin: 0 auto;
+		display: block;
+	}
 	    &__title{
 	    	text-align: left;
 	    	font-size: 21px;
@@ -89,6 +108,7 @@
 			color: #a5a5a5;
 			top: 25%;
 			right: 20px;
+			pointer-events: none;
 		}
 	}
 	 &__button{
@@ -192,13 +212,19 @@
 			vertical-align: top;
 			width: 100%;
 		}
+		
+
+	}
+	&__link{
+		position: relative;
+		display: block;
+		z-index: 20;
 		&:after{
 			content: '';
 			position: absolute;
 			cursor: pointer;
 			display: none;
 			top: 0;
-			//display: block;
 			width: 100%;
 			height: 100%;
 			background-color: rgba( 91, 108, 235, .8);
@@ -223,11 +249,10 @@
 			display: block;
 
 		}
-
-	}
-	&__link{
-			display: block;
+		&:hover{
+			opacity: 8;
 			
+		}
 		}
 
 }
@@ -362,6 +387,9 @@
         border-radius: 10px;
         width: 370px;
         margin: 10px;
+        @include b( tablet ){
+            		width: 316px;
+            	}
         @include b( mobile ){
             		width: 270px;
             	}
@@ -370,6 +398,8 @@
         &--price{
         	font-weight: 700;
         	padding: 45px 0 40px 40px;
+        	border-top-left-radius: 10px;
+        	border-top-right-radius: 10px;
         	border-bottom: 1px solid $grayLight;
         	&--numb{
         		font-size: 67px;

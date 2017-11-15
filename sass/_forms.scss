@@ -94,10 +94,7 @@ button,
     color: #ffffff;
     background: $purple;
   }
-  &:focus {
-    position: relative;
-    top: 1px;
-  }
+
   &.disabled,
   &[disabled="disabled"],
   &[disabled] {

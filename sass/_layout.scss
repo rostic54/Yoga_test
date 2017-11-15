@@ -41,7 +41,7 @@ $footerHeight: 242px;
 .header{
 	position: fixed;
     display: -webkit-box;
-    z-index: 9999;
+    z-index: 99;
     width: 100%;
     background-color: white;
     height: 80px; 
@@ -268,4 +268,8 @@ $footerHeight: 242px;
 	background-color: $purple;
 	color: white;
 	font-size: 16px;
+}
+
+.hiden-part{
+	display: none;
 }

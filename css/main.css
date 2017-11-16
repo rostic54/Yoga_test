@@ -886,6 +886,9 @@ body {
         position: relative;
         margin-top: 30px;
         float: right; } }
+    @media (max-width: 479px) {
+      .header__button-wrapper {
+        margin-right: 50px; } }
   .header__button {
     display: inline-block;
     line-height: 0;
@@ -972,7 +975,7 @@ body {
 
 .burger-menu {
   display: none;
-  opacity: 0;
+  text-align: center;
   -webkit-transition: opacity .15s ease, background-color .1s ease-in;
   transition: opacity .15s ease, background-color .1s ease-in; }
   @media (max-width: 1023px) {
@@ -989,7 +992,7 @@ body {
     font-family: 'Roboto-Regular';
     list-style: none;
     display: inline-block;
-    color: #ffffff;
+    color: #5764e5;
     font-weight: 600;
     padding-bottom: 2px;
     border: 1px solid transparent; }
@@ -1185,6 +1188,16 @@ body {
   .form__button {
     display: inline-block;
     width: 150px; }
+  .form__error-block {
+    background-color: #ff6666;
+    border: 1px solid #c9c9c9;
+    color: #fff;
+    padding: 8px 2px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px; }
+    .form__error-block:empty {
+      display: none; }
 
 .titles {
   text-align: center;

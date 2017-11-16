@@ -37,7 +37,7 @@ function sliderMiddle(){
 }
 
 function scroll() {
-    $("#menu").on("click", "a", function (event) {
+    $("#menu, #burgerMenu").on("click", "a", function (event) {
         if ($(event.target).hasClass('header-fix__logo-wrapper--img') ||
             $(event.target).hasClass('burger-menu__img')) {
             return
@@ -60,6 +60,8 @@ function pushBurger(){
         var span = target[0].querySelector('span');
        
         span.classList.toggle('header__button--active');
+
+        $( '#burgerMenu' ).fadeToggle();
     });
 
 }
@@ -110,6 +112,65 @@ function hoverHeadPackage(){
    
 };
 
+function valid() {
+
+    let form = $('form');
+    for (let i = 0; i < form.length; i++) {
+        $(form[i]).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: {
+                    required: true,
+                    number: true
+                }
+            },
+            focusCleanup: true,
+            focusInvalid: false,
+            validClass: "ok",
+
+            errorPlacement: function (error, element) {
+                return true;
+            },
+
+            /*errorClass: 'form__content--error-block',*/
+
+            invalidHandler: function (event, validator) {
+
+                let errors = validator.numberOfInvalids();
+                let arrErrors = $(this).find('.ok');
+
+                if (errors > 1) {
+
+                    $(this).find('.form__error-block').text('Вы ввели некоректные данные');
+                    return
+
+                }
+
+                if ($(arrErrors).attr('name') == 'name') {
+                    $(this).find('.form__error-block').text('Введите коректный номер телефона');
+                } else {
+                    $(this).find('.form__error-block').text('Введите коректное имя');
+                }
+            },
+
+            onkeyup: function (element) {
+                $('.form__error-block').text('');
+
+
+            },
+
+            submitHandler: function (form) {
+                $(".form__block-error").text('');
+                $('.form__success').css('display', 'block');
+                form.submit();
+
+            }
+        })
+    }
+}
 $( document ).ready( function(){
     mason();
     sliderComments();
@@ -120,4 +181,5 @@ $( document ).ready( function(){
     popUp();
     popUpGallary();
     hoverHeadPackage();
+    valid();
 });

@@ -117,6 +117,19 @@
 		width: 150px;
 
 	}
+	&__error-block{
+		    background-color: #ff6666;
+    border: 1px solid #c9c9c9;
+    color: #fff;
+    padding: 8px 2px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    &:empty{
+    	display: none;
+    	
+    }
+	}
 
 }
 

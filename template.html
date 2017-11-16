@@ -37,7 +37,7 @@
         <div class="menu__logo"><img src="img/Logo.png" alt="logo"></div>
         <ul class="menu__list menu__list--right">
             <li class="menu__item"><a href="#blog" class="menu__item--link">Blog</a></li>
-            <li class="menu__item"><a href="#elements" class="menu__item--link">Elements</a></li>
+            <li class="menu__item"><a href="#art" class="menu__item--link">Elements</a></li>
             <li class="menu__item"><a href="#shop" class="menu__item--link">Shop</a></li>
         </ul>
     </nav>
@@ -49,16 +49,16 @@
     <div id="burgerMenu" class="burger-menu">
             <div class="container">
                 <div class="burger-menu__logo-wrapper">
-                    <a href="#hidden" class="modals burger-menu__link-logo">
-                         <img class="burger-menu__img" src="img/logo.png" alt="potok-klientov"></a> 
+                    <a href="#" class="modals burger-menu__link-logo">
+                         <img class="burger-menu__img" src="img/Logo.png" alt="Yoga"></a> 
                 </div>
                 <ul class="burger-menu__list">
-                    <li class="burger-menu__item"><a href="#" class="burger-menu__link">About us</a></li>
-                    <li class="burger-menu__item"><a href="#case" class="burger-menu__link">Reservation</a></li>
-                    <li class="burger-menu__item"><a href="#result" class="burger-menu__link">Gallery</a></li>
-                    <li class="burger-menu__item"><a href="#secrets" class="burger-menu__link">Blog</a></li>
-                    <li class="burger-menu__item"><a href="#workPlan" class="burger-menu__link">Elements</a></li>
-                    <li class="burger-menu__item"><a href="#team" class="burger-menu__link">Shop</a></li>
+                    <li class="burger-menu__item"><a href="#about" class="burger-menu__link">About us</a></li>
+                    <li class="burger-menu__item"><a href="#first" class="burger-menu__link">Reservation</a></li>
+                    <li class="burger-menu__item"><a href="#art" class="burger-menu__link">Gallery</a></li>
+                    <li class="burger-menu__item"><a href="#blog" class="burger-menu__link">Blog</a></li>
+                    <li class="burger-menu__item"><a href="#elements" class="burger-menu__link">Elements</a></li>
+                    <li class="burger-menu__item"><a href="#shop" class="burger-menu__link">Shop</a></li>
                 </ul>
             </div>
         </div>
@@ -434,8 +434,8 @@
                     <h3 class="form-wrapper__title">Trial Class</h3>
                     <form action="index.php" method="post" class="form">
                         <div class="form__thanks"></div>
-                        <input type="text" placeholder="Enter your name" class="form__applic form__inp">
-                        <input type="text" placeholder="Enter your phone" class="form__applic form__inp">
+                        <input type="text" name="name" placeholder="Enter your name" class="form__applic form__inp">
+                        <input type="text" name="phone" placeholder="Enter your phone" class="form__applic form__inp">
                         <div class="form__select-wrapper">
                         <select name="class" id="selectHid" class="form__applic form__select">
                             <option value="cheap" class="form__select--option">Chose your class</option>
@@ -444,9 +444,13 @@
                             <option value="expensive" class="form__select--option">expensive</option>
                         </select>
                         </div>
-                        <div class="form__button">
+                        <div class="form__error-block"></div>
+                        <button class="form__button">
+                        	Try it
+                        </button>
+                        <<!-- div class="form__button">
                             <a href="" class="btn btn-active">Try it</a>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
         </div>

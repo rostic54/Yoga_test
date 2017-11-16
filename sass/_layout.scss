@@ -55,6 +55,9 @@ $footerHeight: 242px;
     		margin-top: 30px;
             float: right;
     	}
+    	@include b( mobile ){
+    		margin-right: 50px;
+    	}
     }
     &__button{
     display: inline-block;
@@ -139,7 +142,8 @@ $footerHeight: 242px;
 
 .burger-menu{
   display: none;
-  opacity: 0;
+  text-align: center;
+  //opacity: 0;
   transition: opacity .15s ease, background-color .1s ease-in;
   @include b(tablet){
     width: 100%;
@@ -160,7 +164,7 @@ $footerHeight: 242px;
     font-family: 'Roboto-Regular';
     list-style: none;
     display: inline-block;
-    color: #ffffff;
+    color: $purple;
     font-weight: 600;
     padding-bottom: 2px;
     border: 1px solid transparent;

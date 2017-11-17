@@ -52,7 +52,10 @@ h4 {
   line-height: 24px;
   font-weight: 700;
   padding-bottom: 27px;
-  //text-align: center;
+  @include b( tablet ){
+    text-align: center;
+  }
+  
 }
 
 h5 { // improvment title 
@@ -132,6 +135,10 @@ a:visited {
     }
   }
 }
+
+/* img{
+  width: 100%;
+} */
 
 img[style*="float: left"],
 img[style*="float:left"],

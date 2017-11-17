@@ -10,6 +10,7 @@ function mason(){
 function sliderComments(){
     $( '.reviews' ).slick({
         vertical: true,
+        verticalSwiping: true,
         dots: true,
         dotsClass: 'dots-coment',
         prevArrow: false,
@@ -22,8 +23,8 @@ function sliderLittle(){
     $('.teacher').slick({
         asNavFor: '.reviews',
         autoplay: false,
-        prevArrow: '<a href="" class="mid-slide__prev mid-slide__btn"><</a>',
-        nextArrow: '<a href="" class="mid-slide__next mid-slide__btn">></a>'
+        prevArrow: '<a href="" class="teacher__prev teacher__btn mid-slide__btn"><</a>',
+        nextArrow: '<a href="" class="teacher__next teacher__btn mid-slide__btn">></a>'
     
     });
 }
@@ -58,10 +59,15 @@ function pushBurger(){
     $( '#burgerButton' ).on( 'click', function(){
         var target = $(this);
         var span = target[0].querySelector('span');
+
+        // this.preventDefault();
        
         span.classList.toggle('header__button--active');
 
         $( '#burgerMenu' ).fadeToggle();
+
+        return false;
+
     });
 
 }
@@ -125,6 +131,9 @@ function valid() {
                 phone: {
                     required: true,
                     number: true
+                },
+                class: {
+                    required: true
                 }
             },
             focusCleanup: true,
@@ -144,15 +153,15 @@ function valid() {
 
                 if (errors > 1) {
 
-                    $(this).find('.form__error-block').text('Вы ввели некоректные данные');
+                    $(this).find('.form__error-block').text('you entered incorrect data');
                     return
 
                 }
 
                 if ($(arrErrors).attr('name') == 'name') {
-                    $(this).find('.form__error-block').text('Введите коректный номер телефона');
+                    $(this).find('.form__error-block').text('you entered incorrect number');
                 } else {
-                    $(this).find('.form__error-block').text('Введите коректное имя');
+                    $(this).find('.form__error-block').text('you entered incorrect name');
                 }
             },
 
@@ -164,7 +173,7 @@ function valid() {
 
             submitHandler: function (form) {
                 $(".form__block-error").text('');
-                $('.form__success').css('display', 'block');
+                $('.form__thanks').css('display', 'block');
                 form.submit();
 
             }

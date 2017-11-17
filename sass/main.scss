@@ -112,23 +112,36 @@
 		}
 	}
 	 &__button{
-	    	
-	  	display: inline-block;
+	    display: inline-block;
+	    border-radius: 7px;
+	    color: #fff;
+	    background-color: $purple;
 		width: 150px;
 
 	}
 	&__error-block{
-		    background-color: #ff6666;
-    border: 1px solid #c9c9c9;
-    color: #fff;
-    padding: 8px 2px;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 14px;
+		background-color: #ff6666;
+        border: 1px solid #c9c9c9;
+        color: #fff;
+        padding: 8px 2px;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 14px;
     &:empty{
     	display: none;
     	
-    }
+      }
+	}
+	&__thanks{
+		display: none;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px 0;
+        border: 3px solid #22dd22;
+        border-radius: 5px;
+        text-align: center;
+        color: #000;
+        font-size: 20px;
 	}
 
 }
@@ -273,7 +286,6 @@
 
 .information{
 	display: flex;
-	//margin: 100px 0;
 	padding: 0 20px;
 	@include b( tablet ){
 		flex-direction: column;
@@ -314,7 +326,11 @@
         text-align: center;
         border-radius: 20px;
         @include b( phablet ){
-        	display: none;
+        	font-size: 0;
+        	padding: 0;
+        	width: 0;
+        	height: 0;
+        	border: none;
         }
 	}
 	&__next{
@@ -324,6 +340,9 @@
 	&__prev{
 		bottom: 50%;
 		left: -19px;
+	}
+	img{
+		width: 100%;
 	}
 }
 
@@ -572,7 +591,19 @@
 	display: inline-block;
 	width: 200px;
 	border: 1px solid $grayLight;
-	bottom: 10px;
+	background-color: #fff;
+	bottom: 100px;
+	left: 300px;
+	@include b( tablet ){
+	    left: 200px;
+	    bottom: 40px;
+    }
+	@include b( phablet ){
+		left: 50%;
+        margin-left: -100px;
+        background-color: white;
+        bottom: 43px;
+	}
 	&__item{
 		&--part{
 			display: inline-block;
@@ -591,18 +622,28 @@
 	   	}
 	   }
 	}
+	&__btn{
+		padding: 5px;
+		font-size: 17px;
+		width: 30px;
+		height: 30px;
+		top: 50%;
+		 margin-top: -15px;
+		 border: 2px solid $grayLight;
+	}
+	&__prev{
+	   left: -15px;
+
+	}
+	&__next{
+		right: -15px;
+	}
 	
 }
 .slick-list{
-	
 	border: 1px solid $grayLight;
-	
 	padding: 15px;
-	@include b( tablet ){
-		
-		
-	}
-
+	
 }
 
 

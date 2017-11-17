@@ -88,7 +88,7 @@ $footerHeight: 242px;
     &--active{
       background: none;
       &:before{
-        top: 10px;
+        top: 9px;
         transform: rotate(45deg);
         transition-delay: 0s, 0.3s;
       }
@@ -143,7 +143,6 @@ $footerHeight: 242px;
 .burger-menu{
   display: none;
   text-align: center;
-  //opacity: 0;
   transition: opacity .15s ease, background-color .1s ease-in;
   @include b(tablet){
     width: 100%;
@@ -169,8 +168,8 @@ $footerHeight: 242px;
     padding-bottom: 2px;
     border: 1px solid transparent;
     &:hover{
-      border-bottom: 1px solid white;
-      transition: all .3s ease-in-out;
+      border-bottom: 1px solid $purple;
+      
     }
 
   }
@@ -187,7 +186,7 @@ $footerHeight: 242px;
   }
   &__img{
     display: block;
-    padding-left: 16%;
+    
   }
 
 }
@@ -234,6 +233,7 @@ $footerHeight: 242px;
 			width: 50%;
 			@include b( mobile ){
 				padding-bottom: 20px;
+				width: 60%;
 			}
 		}
 	}
@@ -256,6 +256,7 @@ $footerHeight: 242px;
 			@include sprite($place)
 		}
 	}
+	
 }
 .social{
 	background-color: #5a6cec;

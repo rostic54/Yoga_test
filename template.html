@@ -32,24 +32,24 @@
         <ul class="menu__list menu__list--left">
             <li class="menu__item"><a href="#about" class="menu__item--link">About us</a></li>
             <li class="menu__item"><a href="#first" class="menu__item--link">Reservation</a></li>
-            <li class="menu__item"><a href="#gallery" class="menu__item--link">Gallery</a></li>
+            <li class="menu__item"><a href="#art" class="menu__item--link">Gallery</a></li>
         </ul>
         <div class="menu__logo"><img src="img/Logo.png" alt="logo"></div>
         <ul class="menu__list menu__list--right">
             <li class="menu__item"><a href="#blog" class="menu__item--link">Blog</a></li>
-            <li class="menu__item"><a href="#art" class="menu__item--link">Elements</a></li>
+            <li class="menu__item"><a href="#elements" class="menu__item--link">Elements</a></li>
             <li class="menu__item"><a href="#shop" class="menu__item--link">Shop</a></li>
         </ul>
     </nav>
        <div class="header__button-wrapper">
-                <a id="burgerButton" href="#" class="header__link-button">
+                <a id="burgerButton" href class="header__link-button">
                     <span class="header__button"></span>
                 </a>
         </div>
     <div id="burgerMenu" class="burger-menu">
             <div class="container">
                 <div class="burger-menu__logo-wrapper">
-                    <a href="#" class="modals burger-menu__link-logo">
+                    <a href="#" class="burger-menu__link-logo">
                          <img class="burger-menu__img" src="img/Logo.png" alt="Yoga"></a> 
                 </div>
                 <ul class="burger-menu__list">
@@ -433,12 +433,12 @@
         	<div id="form-popup" class="form-wrapper form-wrapper--hidden">
                     <h3 class="form-wrapper__title">Trial Class</h3>
                     <form action="index.php" method="post" class="form">
-                        <div class="form__thanks"></div>
+                        <div class="form__thanks">Thank You</div>
                         <input type="text" name="name" placeholder="Enter your name" class="form__applic form__inp">
                         <input type="text" name="phone" placeholder="Enter your phone" class="form__applic form__inp">
                         <div class="form__select-wrapper">
                         <select name="class" id="selectHid" class="form__applic form__select">
-                            <option value="cheap" class="form__select--option">Chose your class</option>
+                            <option value="" class="form__select--option">Chose your class</option>
                             <option value="cheap" class="form__select--option">cheap</option>
                             <option value="middle" class="form__select--option">middle</option>
                             <option value="expensive" class="form__select--option">expensive</option>
@@ -448,9 +448,6 @@
                         <button class="form__button">
                         	Try it
                         </button>
-                        <<!-- div class="form__button">
-                            <a href="" class="btn btn-active">Try it</a>
-                        </div> -->
                     </form>
                 </div>
         </div>

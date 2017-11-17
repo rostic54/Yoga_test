@@ -8,20 +8,21 @@
 				<div class="form-wrapper">
                     <h3 class="form-wrapper__title">Trial Class</h3>
                     <form action="index.php" method="post" class="form">
-                        <div class="form__thanks"></div>
-                        <input id="name" type="text" placeholder="Enter your name" class="form__applic form__inp">
-                        <input type="text" placeholder="Enter your phone" class="form__applic form__inp">
+                        <div class="form__thanks">Thank you!</div>
+                        <input name="name" type="text" placeholder="Enter your name" class="form__applic form__inp">
+                        <input name="phone" type="text" placeholder="Enter your phone" class="form__applic form__inp">
                         <div class="form__select-wrapper">
-                        <select name="class" id="select" class="form__applic form__select">
-                            <option value="cheap" class="form__select--option">Chose your class</option>
+                        <select name="class" id="select" class="form__applic form__select" required>
+                            <option value="" class="form__select--option">Chose your class</option>
                             <option value="cheap" class="form__select--option">cheap</option>
                             <option value="middle" class="form__select--option">middle</option>
                             <option value="expensive" class="form__select--option">expensive</option>
                         </select>
                         </div>
-                        <div class="form__button">
-                            <a href="" class="btn btn-active">Try it</a>
-                        </div>
+                        <div class="form__error-block"></div>
+                        <button class="form__button">
+                        	Try it
+                        </button>
                     </form>
                 </div>
 			</div>
@@ -99,6 +100,7 @@
 					<div class="mid-slide__item"><img src="img/sliderMid.jpg" alt=""></div>
 					<div class="mid-slide__item"><img src="img/sliderMid.jpg" alt=""></div>
 				</div>
+				<div class="mid__battons"></div>
 			</div>
 		</div>
 	</section>

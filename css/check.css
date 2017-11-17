@@ -5,7 +5,7 @@
        url('../fonts/font/check.woff2?77157836') format('woff2'),
        url('../fonts/font/check.woff?77157836') format('woff'),
        url('../fonts/font/check.ttf?77157836') format('truetype'),
-       url('../fonts/font/check.svg?77157836#check') format('svg');
+       url('../font/check.svg?77157836#check') format('svg');
   font-weight: normal;
   font-style: normal;
 }
